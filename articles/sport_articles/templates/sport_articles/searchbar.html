@@ -1,0 +1,29 @@
+{% extends 'sport_articles/base.html' %}
+
+{% block title %}
+   Результат поиска
+{% endblock %}
+
+{% block content %}
+
+ <div class="wrapper">
+   {% if searched %}
+    {% for p in posts %}
+      <div class="item">
+        <div class="card" style="width: 18rem;">
+          <a href="{{p.url}}" ><img class="card-img-top" src="{{p.img}}" alt="Card image cap"></a>
+          <div class="card-body">
+            <div class="text-wrapper">
+            <a href="{{p.url}}" style="text-decoration: none; color: black"  ><p class="card-text" >{{p.title}}</p></a>
+            </div>
+            <a href="{{p.url}}" style="margin-top: 10px" class="btn btn-primary">перейти</a>
+            <small class="text-muted" style="margin-left: 120px; margin-top: 10px;" >{{p.published_time}}</small>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+   {% endif %}
+ </div>
+
+
+{% endblock %}

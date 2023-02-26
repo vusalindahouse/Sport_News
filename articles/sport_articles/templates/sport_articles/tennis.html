@@ -1,0 +1,67 @@
+{% extends 'sport_articles/base.html' %}
+{% block title %}
+ Теннис
+{% endblock %}
+
+
+
+<main>
+
+ {% block content %}
+ <h2 class="wrapper-title">Sports.ru</h2>
+ <div class="wrapper" >
+    {% for news in tennis_list %}
+      <div class="item">
+        <div class="card" style="width: 18rem;">
+          <a href="{{news.url}}" ><img class="card-img-top" src="{{news.img}}" alt="Card image cap"></a>
+          <div class="card-body">
+            <div class="text-wrapper">
+              <a href="{{news.url}}" style="text-decoration: none; color: black"  ><p class="card-text" >{{news.title}}</p></a>
+            </div>
+            <a href="{{news.url}}" style="margin-top: 10px" class="btn btn-primary">перейти</a>
+            <small class="text-muted" style="margin-left: 120px; margin-top: 10px;" >{{news.time}}</small>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+ </div>
+
+ <h2 class="wrapper-title" >RT</h2>
+ <div class="wrapper" >
+    {% for news in tennis_list2 %}
+      <div class="item">
+        <div class="card" style="width: 18rem;">
+          <a href="{{news.url}}" ><img class="card-img-top" src="{{news.img}}" alt="Card image cap"></a>
+          <div class="card-body">
+            <div class="text-wrapper">
+              <a href="{{news.url}}" style="text-decoration: none; color: black"  ><p class="card-text" >{{news.title}}</p></a>
+            </div>
+            <a href="{{news.url}}" style="margin-top: 10px" class="btn btn-primary">перейти</a>
+            <small class="text-muted" style="margin-left: 120px; margin-top: 10px;" >{{news.time}}</small>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+ </div>
+
+<h2 class="wrapper-title">Спорт РИА</h2>
+ <div class="wrapper">
+    {% for news in tennis_list3 %}
+      <div class="item">
+        <div class="card" style="width: 18rem;">
+          <a href="{{news.url}}" ><img class="card-img-top" src="{{news.img}}" alt="Card image cap"></a>
+          <div class="card-body">
+            <div class="text-wrapper">
+              <a href="{{news.url}}" style="text-decoration: none; color: black"  ><p class="card-text" >{{news.title}}</p></a>
+            </div>
+            <a href="{{news.url}}" style="margin-top: 10px" class="btn btn-primary">перейти</a>
+            <small class="text-muted" style="margin-left: 120px; margin-top: 10px;" >{{news.time}}</small>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+ </div>
+    {% endblock %}
+
+
+</main>>
